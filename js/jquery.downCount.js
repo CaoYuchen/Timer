@@ -7,7 +7,7 @@
 
     $.fn.downCount = function (options, callback) {
         var settings = $.extend({
-                date: null
+                date: 120000
             }, options);
 
         // Save container
