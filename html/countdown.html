@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DownCount Plugin</title>
+    <link rel="stylesheet" href="../css/countdown.css"></link>
+</head>
+
+<body>
+<div class="count">
+    <ul class="sample">
+         <li>
+            <button id="clock1"><img src="../media/clock.svg" alt="" height="20px"/></button>
+            <p class="clock">2 Mins</p>
+        </li>
+        <li>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </li>
+        <li>
+            <button id="clock2"><img src="../media/clock.svg" alt="" height="20px"/></button>
+            <p class="clock">5 Mins</p>
+        </li>
+    </ul>
+  
+    <ul class="countdown">
+        <li>
+            <p><button class="tune" id="tuneMup">∧</button></p>
+            <span class="minutes">02</span>
+            <p><button class="tune" id="tuneMdown">∨</button></p>
+            <p class="minutes_ref">Minutes</p>
+        </li>
+        <li class="seperator"></li>
+        <li>
+            <p><button class="tune" id="tuneSup">∧</button></p>
+            <span class="seconds">00</span>
+            <p><button class="tune" id="tuneSdown">∨</button></p>
+            <p class="seconds_ref">Seconds</p>
+        </li>
+    </ul>
+
+    <div align="center"><button class="example_b" id="start"> &nbsp;&nbsp; Start &nbsp;&nbsp; </button></div>
+</div>
+
+    <audio id="audio" src="../media/alarm.mp3"></audio>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.downCount.js"></script>
+    <script type="text/javascript">
+ 
+    $('.count').downCount({
+        date: '120000'
+    });
+
+    </script>
+</body>
+
+</html>

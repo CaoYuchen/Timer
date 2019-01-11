@@ -1,0 +1,52 @@
+button {
+    outline: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.myModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.2;
+    display: none;
+}
+
+.myPop {
+    position: absolute;
+    display: none;
+}
+
+.myPop-title {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+    margin: 0 0 -10px 0;
+    padding: 0 0 20px 0;
+    cursor: move;
+}
+
+.myPop-close {
+    float: right;
+    cursor: pointer;
+    color: #123122;
+}
+
+.myPop-content {
+    min-width: 400px;
+    min-height: 200px;
+    border-radius: 0 0 10px 10px;
+    margin: 0;
+    background: #FFFFFF;
+    padding: 0;
+}

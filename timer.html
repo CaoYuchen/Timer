@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timer</title>
+    <link type="text/css" href="css/pop.css" rel='stylesheet'>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/pop.js"></script>
+    <script>
+    $(function() {
+        var i = 1;
+        $(document).delegate('.pop', 'click', function(event) {
+            new top.PopLayer({
+                "title": "",
+                "content": "<iframe src='html/countdown.html' frameborder='0' scrolling='no' height='320px' width='420px'></iframe>"
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <button class='pop'><image src='./media/alarm-clock.svg' height='50px'></button>
+    <script type="text/javascript">
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+
+</html>
