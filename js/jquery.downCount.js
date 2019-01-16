@@ -13,6 +13,7 @@
         // Save container
         var container = this;
         var interval;
+        var startflag = false;
         /**
          * Main downCount function that calculates everything
          */
@@ -84,7 +85,19 @@
             // container.find('#clock1').attr('disabled','true');
             // container.find('#clock2').attr('disabled','true');
             interval = setInterval(countdown, 1000);
+            startflag = true;
         });
+
+         $("#pause").click(function(){
+            if(startflag){
+                clearInterval(interval);
+                startflag = false;
+                container.find('#start').attr('disabled',false);
+            }
+            
+            
+        });
+
 
         var min = Math.floor(settings.date / 60000),
             sec = Math.floor((settings.date % 60000) / 1000);

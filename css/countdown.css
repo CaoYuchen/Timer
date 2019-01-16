@@ -17,9 +17,9 @@
 
     ul.sample{
         list-style: none;
-        padding: 0 220px 0 0;
+        margin: 0 160px 0 0;
         text-align: center;
-        margin:0;
+        
     }
     ul.sample li{
         display: inline-block;
@@ -95,6 +95,26 @@
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
     }
+
+
+    .example_a {
+    color: #fff !important;
+    background: #e12525d4;
+    padding: 10px 14px 9px;
+    font-weight: bold;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    }
+
+    .example_a:hover {
+    cursor:pointer;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+    }
+
 
     .tune {
         font-size: 20px;
