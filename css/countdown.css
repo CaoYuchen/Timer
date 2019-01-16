@@ -54,7 +54,7 @@
 
     ul.countdown li p button{
         color: #1e1f20;
-        font-size: 10px;
+        font-size: 15px;
         margin: 0;
     }
 
@@ -94,4 +94,9 @@
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
+    }
+
+    .tune {
+        font-size: 20px;
+        font-weight: bold;
     }
