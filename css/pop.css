@@ -42,6 +42,12 @@ button {
     color: #123122;
 }
 
+.myPop-minimize{
+    float: right;
+    cursor: pointer;
+    margin: 12px 12px 0 0;
+}
+
 .myPop-content {
     min-width: 400px;
     min-height: 200px;
@@ -50,3 +56,24 @@ button {
     background: #FFFFFF;
     padding: 0;
 }
+
+.mini{
+    font-weight: bold;
+    font-size: 30px;
+    display:none;
+    color: #2997be;
+    border-radius: 30px;
+    border-color: #2997be;
+    border-style: solid;
+    padding:10px;
+    position: fixed;
+    top:1%;
+    right:50%;
+    z-index: 9999;
+}
+
+.mini span{
+    margin-right: 10px;
+    float:left;
+}
+

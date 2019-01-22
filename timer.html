@@ -9,21 +9,15 @@
     <link type="text/css" href="css/pop.css" rel='stylesheet'>
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/pop.js"></script>
-    <script>
-    $(function() {
-        var i = 1;
-        $(document).delegate('.pop', 'click', function(event) {
-            new top.PopLayer({
-                "title": "",
-                "content": "<iframe src='html/countdown.html' frameborder='0' scrolling='no' height='300px' width='400px'></iframe>"
-            });
-        });
-    });
-    </script>
 </head>
 
 <body>
     <button class='pop'><image src='./media/alarm-clock.svg' height='50px'></button>
+
+    <div class="mini">
+    <span id="minutes">02</span><span id="separator">:</span><span id="seconds">00</span>
+    <button id="play"><img src="./media/play.svg" height='30px'></button><button id="pause"><img src="./media/pause.svg" height='30px'></button><button id="minimize"><img src="./media/max.svg" height='28px'></button>
+    </div>
 </body>
 
 </html>
