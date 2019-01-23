@@ -187,3 +187,25 @@ function syn(){
 
 var interval = setInterval(syn,500);
 
+$(function(){
+    document.oncontextmenu = function(){
+        return false;
+    }
+    document.onselectstart = function() {
+        return false;
+    }
+    document.onselectstart = function(){
+        return false;
+    }
+    document.onkeydown = function() {
+        if (event.ctrlKey) {
+            return false;
+        }
+        if (event.altKey) {
+            return false;
+        }
+        if (event.shiftKey) {
+            return false;
+        }
+    }
+})
