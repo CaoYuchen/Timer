@@ -17,7 +17,7 @@
  */
 (function() {
 	
-	function PopLayer(args) {
+	function TimerPopLayer(args) {
 		//初始化参数
 		this.title = args.title || "";
 		this.content = args.content || "";
@@ -40,7 +40,7 @@
 		this.init();
 	};
 	
-	PopLayer.prototype = {
+	TimerPopLayer.prototype = {
 		
 		init: function() {
 			this.initContent();//初始化内容
@@ -53,7 +53,7 @@
                 this.myModal.show();
             }
 			$("body", this.document).append(this.myPop);
-            $(".myPop-title-value", this.myPop).html(this.title);//设置标题
+            $(".TimerPop-title-value", this.myPop).html(this.title);//设置标题
             this.myPop.css("top", (this.document.documentElement.clientHeight - this.myPop.height()) / 2 + "px");
 			this.myPop.css("left", (this.document.documentElement.clientWidth - this.myPop.width()) / 2 + "px");
             this.myPop.show();
@@ -62,7 +62,7 @@
 		initEvent: function() {
 			var $this = this;
 			//鼠标按下事件
-			$(".myPop-title", this.myPop).on("mousedown", function(e) {
+			$(".TimerPop-title", this.myPop).on("mousedown", function(e) {
 				$this.isDown = true;
 				var event = window.event || e;
 				//记录按下时鼠标距离弹出层位置
@@ -94,29 +94,29 @@
                 return false;
             });
 			//关闭事件
-			$(".myPop-close", this.myPop).on('click', function() {
+			$(".TimerPop-close", this.myPop).on('click', function() {
                 $this.destroy();
                 return false;
             });
             //minimize
-            $(".myPop-minimize", this.myPop).on('click',function() {
-            	$('.myModal').hide();
-            	$('.myPop').hide();
+            $(".TimerPop-minimize", this.myPop).on('click',function() {
+            	$('.TimerModal').hide();
+            	$('.TimerPop').hide();
             	$('.mini').show();
-            	$('.pop').attr('disabled',true);
+            	$('.Timerpop').attr('disabled',true);
             });
 		},
         
 		getElement: function() {
 			return {
-				"myModal": $("<div class='myModal'></div>", this.document),
-				"myPop": $("<div class='myPop'>" +
-                                "<h2 class='myPop-title'>" +
-                                    "<span class='myPop-title-value'></span>" +
-                                    "<span class='myPop-close'><svg style='width:25px;fill:#131414; margin:10px 10px -10px 0' viewBox='0 0 24 24'><path d='M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z'/><path d='M0 0h24v24h-24z' fill='none'/></svg></span>" + 
-                                	"<span class='myPop-minimize'><img src='./media/mini.svg' width='18px'></span>" +
+				"myModal": $("<div class='TimerModal'></div>", this.document),
+				"myPop": $("<div class='TimerPop'>" +
+                                "<h2 class='TimerPop-title'>" +
+                                    "<span class='TimerPop-title-value'></span>" +
+                                    "<span class='TimerPop-close'><svg style='width:25px;fill:#131414; margin:10px 10px -10px 0' viewBox='0 0 24 24'><path d='M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z'/><path d='M0 0h24v24h-24z' fill='none'/></svg></span>" + 
+                                	"<span class='TimerPop-minimize'><img src='./media/mini.svg' width='18px'></span>" +
                                 "</h2>" + 
-                                "<div class='myPop-content'>" + this.content + "</div>" + 
+                                "<div class='TimerPop-content'>" + this.content + "</div>" + 
                            "</div>", this.document)
 			};
 		},
@@ -133,17 +133,17 @@
 	
 
 		
-	top.PopLayer = PopLayer;
+	top.TimerPopLayer = TimerPopLayer;
 
     
 })();
 
 
 $(function() {
-    $(document).delegate('.pop', 'click', function(event) {
-        new top.PopLayer({
+    $(document).delegate('.Timerpop', 'click', function(event) {
+        new top.TimerPopLayer({
             "title": "",
-            "content": "<iframe id='frame' src='html/countdown.html' frameborder='0' scrolling='no' height='300px' width='400px'></iframe>"
+            "content": "<iframe id='frame' src='./html/countdown.html' frameborder='0' scrolling='no' height='300px' width='400px'></iframe>"
         });
     });
 });
@@ -151,10 +151,10 @@ $(function() {
 
 $(function() {
     $(document).delegate('#minimize', 'click', function(event) {
-    	$('.myModal').show();
-    	$('.myPop').show();
+    	$('.TimerModal').show();
+    	$('.TimerPop').show();
     	$('.mini').hide();
-    	$('.pop').attr('disabled',false);
+    	$('.Timerpop').attr('disabled',false);
     });
 });
 
@@ -196,16 +196,5 @@ $(function(){
     }
     document.onselectstart = function(){
         return false;
-    }
-    document.onkeydown = function() {
-        if (event.ctrlKey) {
-            return false;
-        }
-        if (event.altKey) {
-            return false;
-        }
-        if (event.shiftKey) {
-            return false;
-        }
     }
 })
