@@ -19,5 +19,15 @@
     <button id="play"><img src="./media/play.svg" height='30px'></button><button id="pause"><img src="./media/pause.svg" height='30px'></button><button id="minimize"><img src="./media/max.svg" height='28px'></button>
     </div>
 </body>
+<script>
+$(function() {
+$(document).delegate('.Timerpop', 'click', function() {
+    new top.TimerPopLayer({
+        "title": "",
+        "content": "<iframe id='frame' src='./html/countdown.html' frameborder='0' scrolling='no' height='300px' width='400px'></iframe>"
+    });
+})
+})
+</script>
 
 </html>

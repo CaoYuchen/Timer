@@ -15,6 +15,7 @@
  * @param 	moveable 	弹出层可否移动
  * @param   document	上下文文档对象
  */
+ // var lala;
 (function() {
 	
 	function TimerPopLayer(args) {
@@ -98,13 +99,13 @@
                 $this.destroy();
                 return false;
             });
-            //minimize
-            $(".TimerPop-minimize", this.myPop).on('click',function() {
-            	$('.TimerModal').hide();
-            	$('.TimerPop').hide();
-            	$('.mini').show();
-            	$('.Timerpop').attr('disabled',true);
-            });
+        	//minimize
+		    $(".TimerPop-minimize").on('click',function() {
+		    	$('.TimerModal').hide();
+		    	$('.TimerPop').hide();
+		    	$('.mini').show();
+		    	$('.Timerpop').attr('disabled',true);
+		    });
 		},
         
 		getElement: function() {
@@ -114,7 +115,7 @@
                                 "<h2 class='TimerPop-title'>" +
                                     "<span class='TimerPop-title-value'></span>" +
                                     "<span class='TimerPop-close'><svg style='width:25px;fill:#131414; margin:10px 10px -10px 0' viewBox='0 0 24 24'><path d='M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z'/><path d='M0 0h24v24h-24z' fill='none'/></svg></span>" + 
-                                	"<span class='TimerPop-minimize'><img src='./media/mini.svg' width='18px'></span>" +
+                                    "<span class='TimerPop-minimize'><svg viewBox='0 0 294.8 294.8' style='width:18px;fill:#131414;'><g><path d='M288.8,0H47.4c-3.3,0-6,2.7-6,6v17.4c0,3.3,2.7,6,6,6s6-2.7,6-6V12h229.4v229.4h-11.4c-3.3,0-6,2.7-6,6s2.7,6,6,6h17.4c3.3,0,6-2.7,6-6V6C294.8,2.7,292.1,0,288.8,0z'/><path d='M247.4,41.4H6c-3.3,0-6,2.7-6,6v241.4c0,3.3,2.7,6,6,6h241.4c3.3,0,6-2.7,6-6V47.4C253.4,44.1,250.7,41.4,247.4,41.4zM241.4,282.8H12V53.4h229.4V282.8z'/></g></svg></span>" +
                                 "</h2>" + 
                                 "<div class='TimerPop-content'>" + this.content + "</div>" + 
                            "</div>", this.document)
@@ -134,19 +135,10 @@
 
 		
 	top.TimerPopLayer = TimerPopLayer;
+	// lala = TimerPopLayer;
 
     
 })();
-
-
-$(function() {
-    $(document).delegate('.Timerpop', 'click', function(event) {
-        new top.TimerPopLayer({
-            "title": "",
-            "content": "<iframe id='frame' src='./html/countdown.html' frameborder='0' scrolling='no' height='300px' width='400px'></iframe>"
-        });
-    });
-});
 
 
 $(function() {
@@ -156,7 +148,7 @@ $(function() {
     	$('.mini').hide();
     	$('.Timerpop').attr('disabled',false);
     });
-});
+});      
 
 
 $(function() {
@@ -197,4 +189,4 @@ $(function(){
     document.onselectstart = function(){
         return false;
     }
-})
+});
