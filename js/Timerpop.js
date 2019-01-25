@@ -15,7 +15,7 @@
  * @param 	moveable 	弹出层可否移动
  * @param   document	上下文文档对象
  */
- // var lala;
+ var timer;
 (function() {
 	
 	function TimerPopLayer(args) {
@@ -134,8 +134,8 @@
 	
 
 		
-	top.TimerPopLayer = TimerPopLayer;
-	// lala = TimerPopLayer;
+	// top.TimerPopLayer = TimerPopLayer;
+	timer = TimerPopLayer;
 
     
 })();
