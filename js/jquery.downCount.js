@@ -47,11 +47,14 @@
                 ref_seconds = (seconds === 1) ? 'Second' : 'Seconds';
 
             // alarm
-            var alarm=$('#audio')[0];
-            if(seconds<6 && minutes==0)
-                alarm.play();
+            if(seconds<6 && minutes==0 && startflag)
+                $('#audio').trigger("play");
+                // alarm.play();
             if(seconds == 0 && minutes==0)
-                alarm.pause();
+                $('#audio').trigger("pause");
+            
+                // alarm.pause();
+                
 
             // fix dates so that it will show two digets
                 minutes = (String(minutes).length >= 2) ? minutes : '0' + minutes;
@@ -93,6 +96,8 @@
                 clearInterval(interval);
                 startflag = false;
                 container.find('#start').attr('disabled',false);
+                alarm.pause();
+                $('#audio').trigger("pause");
             }
             
             
@@ -210,4 +215,4 @@ $(function(){
     document.onselectstart = function(){
         return false;
     }
-})
+});
